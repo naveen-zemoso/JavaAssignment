@@ -12,11 +12,11 @@ public class AlphabetSearchApplication {
 
     public static void main(String[] args) {
 
-        System.out.println(containsAllAlphabets("abcdefghijklmadsafsdfdfnopqrstuvwxyZ"));
-        System.out.println(containsAllAlphabets("naveen"));
+        System.out.println(containsAllAlphabets("abcdefghijklmadsafsdfdfnopqrstuvwxyZ", input -> input.toLowerCase()));
+        System.out.println(containsAllAlphabets("naveen", input -> input.toUpperCase()));
     }
 
-    public static boolean containsAllAlphabets(String input) {
+    public static boolean containsAllAlphabets(String input, FormatString formatString) {
 
         int[] charCount = new int[26];
 
