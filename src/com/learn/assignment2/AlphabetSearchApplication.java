@@ -13,7 +13,7 @@ public class AlphabetSearchApplication {
     public static void main(String[] args) {
 
         System.out.println(containsAllAlphabets("abcdefghijklmadsafsdfdfnopqrstuvwxyZ", input -> input.toLowerCase()));
-        System.out.println(containsAllAlphabets("naveen", input -> input.toUpperCase()));
+        System.out.println(containsAllAlphabets("naveen", input -> input.toLowerCase()));
     }
 
     public static boolean containsAllAlphabets(String input, FormatString formatString) {
@@ -23,7 +23,7 @@ public class AlphabetSearchApplication {
         if (input == null || input.isEmpty())
             return false;
 
-        input = input.toLowerCase();
+        input = formatString.format(input);
         char[] chars = input.toCharArray();
 
         if (chars.length < 26)
